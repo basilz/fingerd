@@ -21,10 +21,26 @@ executable debug
   build-depends: base >= 4.7 && < 5
                , network
 
+executable users
+  ghc-options: -Wall
+  hs-source-dirs: src
+  main-is: Users.hs
+  other-modules: Options
+               , Modify
+  default-language: Haskell2010
+  build-depends: base >= 4.7 && < 5
+               , sqlite-simple
+               , optparse-applicative
+               , text
+               , attoparsec
+               , raw-strings-qq
+               , bytestring
+
 executable fingerd
   ghc-options: -Wall
   hs-source-dirs: src
   main-is: Main.hs
+  other-modules: Modify
   default-language: Haskell2010
   build-depends: base >= 4.7 && < 5
                , bytestring
